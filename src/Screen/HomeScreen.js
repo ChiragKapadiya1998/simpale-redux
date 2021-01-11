@@ -1,11 +1,11 @@
-import React,{useState} from 'react'
+import React from 'react'
 import { View, Text, SafeAreaView, Button } from 'react-native'
 import {useSelector ,useDispatch} from 'react-redux';
 import {add ,remove,namechang} from '../redux/Action/action';
 
-const Home = () => {
+const HomeScreen = ({navigation}) => {
    const data = useSelector(((state)=>state.counter));
-   const datas=useSelector(((state)=>state.name));
+   const name=useSelector(((state)=>state.name));
 
    const dispatch=useDispatch();
 
@@ -15,11 +15,12 @@ const Home = () => {
                 <Button  title='ADD' onPress={()=>dispatch(add())}/>
                 <Text style={{alignSelf:'center'}}>count :{data} </Text>
                 <Button  title='REMOVE' onPress={()=>dispatch(remove())}/>
-                <Text >Name is  :{datas}</Text>
+                <Text >Name is  :{name}</Text>
                 <Button title='ChangeName' onPress={()=>dispatch(namechang())}/>
+                <Button  title='nextScreen' onPress={()=>navigation.navigate('IndexScreen')}/>
             </View>
         </SafeAreaView>
     )
 }
 
-export default Home;
+export default HomeScreen;
