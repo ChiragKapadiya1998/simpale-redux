@@ -10,7 +10,8 @@ import {
 const initialState = {
   userData: [],
 
-  counter: 1,
+  counter: 0,
+
   names: 'chirag ',
   name: 'chirag',
   username: 'Kapadiy',
@@ -28,12 +29,12 @@ export const mainReducers = (state = initialState, action) => {
     case ADDTONUM:
       return {
         ...state,
-        counter: state.counter + 10,
+        counter: action.count,
       };
     case REMOVTONUM:
       return {
         ...state,
-        counter: state.counter - 10,
+        counter: action.count,
       };
     case NAMECHANG:
       return {

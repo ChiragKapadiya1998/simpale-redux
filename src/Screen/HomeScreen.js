@@ -3,21 +3,24 @@ import {View, Text, SafeAreaView, Button} from 'react-native';
 import {TextInput} from 'react-native-gesture-handler';
 import {useSelector, useDispatch} from 'react-redux';
 import {add, remove, namechang, AddName} from '../redux/Action/action';
-import {ADDTONUM} from '../redux/Action/actionTypes';
+// import {ADDTONUM} from '../redux/Action/actionTypes';
 
 const HomeScreen = ({navigation}) => {
   const [text, setText] = useState('');
   const data = useSelector((state) => state.counter);
   const name = useSelector((state) => state.name);
-
   const dispatch = useDispatch();
+
+  const buttonadd = (item) => {
+    dispatch(add(item));
+  };
 
   return (
     <SafeAreaView>
       <View>
-        <Button title="ADD" onPress={() => dispatch({type: ADDTONUM})} />
+        <Button title="ADD" onPress={() => buttonadd(data)} />
         <Text style={{alignSelf: 'center'}}>count :{data} </Text>
-        <Button title="REMOVE" onPress={() => dispatch(remove())} />
+        <Button title="REMOVE" onPress={() => dispatch(remove(data))} />
 
         <Text>Name is :{name}</Text>
         <Button title="ChangeName" onPress={() => dispatch(namechang())} />
