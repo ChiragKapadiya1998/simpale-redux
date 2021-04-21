@@ -29,12 +29,12 @@ export const mainReducers = (state = initialState, action) => {
     case ADDTONUM:
       return {
         ...state,
-        counter: action.count,
+        counter: action.payload,
       };
     case REMOVTONUM:
       return {
         ...state,
-        counter: action.count,
+        counter: action.payload,
       };
     case NAMECHANG:
       return {

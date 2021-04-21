@@ -22,13 +22,13 @@ const HomeScreen = ({navigation}) => {
         <Text style={{alignSelf: 'center'}}>count :{data} </Text>
         <Button title="REMOVE" onPress={() => dispatch(remove(data))} />
 
-        <Text>Name is :{name}</Text>
+        {/* <Text>Name is :{name}</Text>
         <Button title="ChangeName" onPress={() => dispatch(namechang())} />
         <Button
           title="nextScreen"
           onPress={() => navigation.navigate('IndexScreen')}
-        />
-        <View style={{justifyContent: 'center'}}>
+        /> */}
+        {/* <View style={{justifyContent: 'center'}}>
           <Text>Enter the name:</Text>
           <TextInput
             style={{
@@ -49,7 +49,7 @@ const HomeScreen = ({navigation}) => {
         <Button
           title="DemoScreen"
           onPress={() => navigation.navigate('DemoScreen')}
-        />
+        /> */}
       </View>
     </SafeAreaView>
   );
